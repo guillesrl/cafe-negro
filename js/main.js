@@ -372,8 +372,12 @@ if (contactForm) {
     // Aquí puedes integrar con tu backend o servicio de email
     console.log('Formulario enviado:', formData);
 
-    // Mostrar mensaje de éxito
-    alert('¡Gracias por tu mensaje! Te responderemos pronto.');
+    // Mostrar mensaje de éxito inline
+    const successMsg = document.getElementById('formSuccess');
+    if (successMsg) {
+      successMsg.style.display = 'block';
+      setTimeout(() => { successMsg.style.display = 'none'; }, 4000);
+    }
 
     // Limpiar formulario
     contactForm.reset();
